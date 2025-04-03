@@ -3,17 +3,22 @@ El objetivo principal de este proyecto es preparar y analizar un conjunto de dat
 
 Limpieza y Validación de Datos
 Problemas Detectados y Soluciones
-Errores en Formatos de Fechas
-
-Problema: Fechas en formatos incorrectos o con valores nulos.
-
-Solución: Conversión a formato datetime y eliminación de registros con fechas faltantes o inconsistentes (por ejemplo, donde end_date es anterior a start_date).
 
 Valores Numéricos con Decimales Incorrectos
 
 Problema: Algunos decimales estaban escritos con comas en lugar de puntos.
 
 Solución: Corrección manual de los archivos antes de la carga de datos para asegurar que se utilicen puntos como separadores decimales.
+
+
+
+Errores en Formatos de Fechas
+
+Problema: Fechas en formatos incorrectos o con valores nulos.
+
+Solución: Conversión a formato datetime y eliminación de registros con fechas faltantes o inconsistentes (por ejemplo, donde end_date es anterior a start_date).
+
+
 
 Valores Faltantes e Imputación
 
@@ -35,22 +40,23 @@ Se imputa con 'Unknown' para no afectar el análisis de las variables numéricas
 Variables de fechas:
 Se eliminaron las filas con valores faltantes para evitar especulaciones sobre posibles errores y mantener la integridad cronológica.
 
+
+
+
 Duplicados
 
 Se identificaron y eliminaron registros duplicados usando drop_duplicates() para evitar sesgos en los análisis.
 
-Pasos Realizados en la Limpieza
-Carga de datos: Se lee el dataset desde un archivo CSV y se muestra un preview inicial.
 
-Conversión de fechas: Se transforma start_date y end_date a datetime y se eliminan registros con fechas faltantes o inconsistentes.
 
-Corrección de errores en columnas categóricas: Por ejemplo, se corrige el error ortográfico en channel (de “referal” a “referral”).
 
-Imputación de valores faltantes: Se utilizan la mediana, media y moda, según corresponda.
 
-Eliminación de duplicados: Se remueven registros repetidos para garantizar la integridad del dataset.
 
-Exportación del dataset limpio: El archivo procesado se guarda para su posterior análisis.
+
+
+
+
+
 
 Exploración de Datos
 Se desarrollaron diferentes ejercicios para extraer insights y evaluar el rendimiento de las campañas de marketing.
