@@ -235,9 +235,7 @@ def CampanasRentables():
     #   - Tasa de Conversión
     #   - Presupuesto
     metrics = ['roi', 'conversion_rate', 'budget']
-    for metric in metrics:
-        corr_coef, p_val = pearsonr(top_campaigns['net_profit'], top_campaigns[metric])
-        print(f"Correlación entre Beneficio Neto y {metric}: coeficiente = {corr_coef:.2f}, p-value = {p_val:.2e}")
+    
     
     # ----------------------------------------------------------------
     # Visualización 3: Gráficos de dispersión con línea de tendencia.
@@ -309,10 +307,9 @@ def RelacionPresupuestosIngresos():
             color="red", line_kws={"linestyle":"--"})
 
     # Ajustar rangos y formato
-    plt.xlim(0, 60000)  # Rango reducido
+    plt.xlim(0, 60000) 
     plt.ylim(0, 1000000)
-    ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'${x/1000:.0f}k'))
-    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'${y/1000:.0f}k'))
+
 
     plt.title("Relación Presupuesto vs Ingresos (Rango ajustado)")
     plt.xlabel("Presupuesto")
@@ -460,11 +457,11 @@ def AnalisisTemporal():
     plt.show()
 
 
-#FrecuenciaYRoyPorCanal1()
+FrecuenciaYRoyPorCanal1()
 #ComparativaPorTipoDeCampaña2()
 #AnalisisDeDistribucionesROI3()
-#EfectividadPorAudiencia()
-#CampanasRentables()
-#RelacionPresupuestosIngresos()
-#CampanasAltoRendimiento()
+EfectividadPorAudiencia()
+CampanasRentables()
+RelacionPresupuestosIngresos()
+CampanasAltoRendimiento()
 AnalisisTemporal()
